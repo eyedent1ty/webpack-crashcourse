@@ -8,7 +8,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name][contenthash].js'
+    filename: '[name][contenthash].js',
+    clean: true
   },
   devServer: {
     static: {
@@ -20,11 +21,22 @@ module.exports = {
     compress: true,
     historyApiFallback: true
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }
     ]
   },
