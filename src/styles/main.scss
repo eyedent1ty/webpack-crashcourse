@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$font-stack: 'Montserrat', sans-serif;
+$primary-color: red;
+$secondary-color: yellow;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  font-family: $font-stack;
+  font-size: 1rem;
+  font-weight: 400;
+  background-image: linear-gradient(to right, $primary-color, $secondary-color);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.joke {
+  font-size: 1.875rem;
+  letter-spacing: 1px;
+  line-height: 2.5rem;
+  margin: 50px auto;
+  max-width: 600px;
+}
